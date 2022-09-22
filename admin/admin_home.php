@@ -161,10 +161,26 @@
                 <div id="Serviceuser" class="tabcontent">
                 <h3>ผู้ใช้บริการ</h3>
                 <div>
+                <form action="searchData.php" class="form-group" method="POST">
+                    <label for="">ค้นหาผู้ใช้บริการ</label>
+                    <input type="text" placeholder="ค้นหาผู้ใช้บริการ" name="empname" class="form-control">
+                    <input type="submit" value="ค้นหา" class="btn btn-dark my-2">
+                </form>
                 </div>
     </div>
 
     <div id="Report" class="tabcontent">
+                    <div align="right" class="col-md-20 d-flex justify-content-end">
+                        <div>&nbsp;</div>
+                        <form action=" " method="post">
+                            <input type="text" placeholder="วันที่" name=" " class="form-control">
+                            <input type="submit" value="ค้นหา" class="btn btn-info my-2">
+                        </form>
+                    </div>
+                            <div class="col-md-20 d-flex justify-content-end">
+                                <a class="btn btn-info" href="downloadpdf.php?file=gfgpdf">โหลดรายงาน</a>
+                            </div>
+
                             <br>
             <table class="table">
                 <thead>
@@ -219,12 +235,31 @@
     </div>
                 
     <div id="Notification" class="tabcontent">
-            
+                <h3>การแจ้งเตือน</h3>  
+                    <body>
+                        <div class="container">
+                        <hr>
+                        <form action="sendinfo.php" method="POST">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">อีเมล์</label>
+                                <input type="email" class="form-control" name="email" aria-describedby="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">ชื่อ-สกุล</label>
+                                <input type="text" class="form-control" name="fullname" aria-describedby="Full Name">
+                            </div>
+                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        </div>
+                    </body>
     </div>
     <div id="Information" class="tabcontent">
                 <h3>ข้อมูลสมาชิก</h3>
                 <div align="right">
-                
+                    <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
+                        ค้นหา <input type="text" name="search" placeholder="กรอกคำค้นหา">
+                        <input class="btn btn-info" type="submit" value="ค้นหา">
+                    </form>
                 </div>
                 <style>
                     table {
