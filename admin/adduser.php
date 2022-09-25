@@ -98,7 +98,7 @@
                     <label for="price" class="col-sm-3 control-label">ราคา:</label>
                     <input type="text" value="<?php echo $data['price']; ?>" required class="form-control" name="price">
                 </div>
-                    <input type="date" name="calendar">
+                    <input type="date">
                 <hr>
                 <a href="admin_home.php" class="btn btn-secondary">Go Back</a>
                 <button type="submit" name="" class="btn btn-primary">Update</button>
