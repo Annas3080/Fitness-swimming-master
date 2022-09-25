@@ -4,7 +4,7 @@
 
     require_once "../connection.php";
 
-    if (isset($_POST['update'])) {
+    if (isset($_POST[''])) {
         $phplogin_id = $_POST['phplogin_id'];
         $users_id = $_POST['users_id'];
         $username = $_POST['username'];
@@ -62,7 +62,7 @@
             ?>
                 <div class="mb-3">
                     <label for="phplogin_id" class="col-sm-3 control-label">ID:</label>
-                    <input type="text" readonly value="<?php echo $data['phplogin_id']; ?>" required class="form-control" name="phplogin_id" >
+                    <input type="text" readonly value="<?php echo $data['phplogin_id']; ?>" required class="form-control" name="id" >
                     <div class="mb-3">
                     <label for="users_id" class="col-sm-3 control-label">รหัสผู้ใช้</label>
                     <input type="text" value="<?php echo $data['users_id']; ?>" required class="form-control" name="users_id">
@@ -88,16 +88,20 @@
                     <div class="col-sm-12">
                     <select name="role" class="form-control">
                         <option value="" selected="selected">- ระดับสมาชิก -</option>
-                        <option value="admin">Admin</option>
                         <option value="student">Student</option>
                         <option value="in_personnel">In personnel</option>
                         <option value="out_personnel">Out personnel</option>
                         </select>
                     </div>
                     </div>
+                <div class="mb-3">
+                    <label for="price" class="col-sm-3 control-label">ราคา:</label>
+                    <input type="text" value="<?php echo $data['price']; ?>" required class="form-control" name="price">
+                </div>
+                    <input type="date" name="calendar">
                 <hr>
                 <a href="admin_home.php" class="btn btn-secondary">Go Back</a>
-                <button type="submit" name="update" class="btn btn-primary">Update</button>
+                <button type="submit" name="" class="btn btn-primary">Update</button>
             </form>
     </div>
 

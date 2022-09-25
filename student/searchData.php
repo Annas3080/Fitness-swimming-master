@@ -7,7 +7,7 @@
 
         if (isset($_GET['delete'])) {
             $delete_id = $_GET['delete'];
-            $deletestmt = $db->query("DELETE FROM phplogin WHERE phplogin_id = $delete_id");
+            $deletestmt = $db->query("DELETE FROM phplogin WHERE id = $delete_id");
             $deletestmt->execute();
     
             if ($deletestmt) {
@@ -160,13 +160,55 @@
 
                 <div id="Serviceuser" class="tabcontent">
                 <h3>ผู้ใช้บริการ</h3>
-                <div>
-                <form action="searchData.php" class="form-group" method="POST">
-                    <label for="">ค้นหาผู้ใช้บริการ</label>
-                    <input type="text" placeholder="ค้นหาผู้ใช้บริการ" name="empname" class="form-control">
-                    <input type="submit" value="ค้นหา" class="btn btn-dark my-2">
-                </form>
-                </div>
+                <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">รหัสผู้ใช้</th>
+                    <th scope="col">ชื่อ-นามสกุล</th>
+                    <th scope="col">อีเมล์</th>
+                    <th scope="col">เบอร์โทรศัพท์</th>
+                    <th scope="col">ไลน์ไอดี</th>
+                    <th scope="col">ระดับสมาชิก</th>
+                </tr>
+                <tbody>
+                <?php 
+                    require_once "../connection.php";
+                    $name = $_POST["empname"];
+                    $stmt = $db->query("SELECT * FROM phplogin WHERE username LIKE '%$name%'");
+                    $stmt->execute();
+                    $phplogins = $stmt->fetchAll();
+                    if (!$phplogins) {
+                        echo "<p><td colspan='6' class='text-center'>No data available</td></p>";
+                        } else {
+                        foreach($phplogins as $phplogin){
+                                ?> <tr>
+                                    <td><?php echo $phplogin['users_id']; ?></td>
+                                    <td><?php echo $phplogin['username']; ?></td>
+                                    <td><?php echo $phplogin['email']; ?></td>
+                                    <td><?php echo $phplogin['phone_number']; ?></td>
+                                    <td><?php echo $phplogin['line_id']; ?></td>
+                                    <td><?php echo $phplogin['role']; ?></td>
+                                </tr>
+                        <?php }  }      
+                ?>
+                </tbody>
+            </table>
+                <script>
+                function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+                }
+                </script>
+
     </div>
 
     <div id="Report" class="tabcontent">
@@ -369,7 +411,7 @@
                         <td><?php echo $phplogin['line_id']; ?></td>
                         <td><?php echo $phplogin['role']; ?></td>
                         <td>
-                            <a href="edit.php?phplogin_id=<?php echo $phplogin['phplogin_id']; ?>" class="btn btn-warning">แก้ไข</a>
+                            <a href="edit.php?id=<?php echo $phplogin['phplogin_id']; ?>" class="btn btn-warning">แก้ไข</a>
                             <a onclick="return confirm('Are you sure you want to delete?');" href="?delete=<?php echo $phplogin['phplogin_id']; ?>" class="btn btn-danger">ลบข้อมูล</a>
                         </td>
                     </tr>
