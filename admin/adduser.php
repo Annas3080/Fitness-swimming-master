@@ -13,7 +13,7 @@
         $line_id =$_POST['line_id'];
         $role = $_POST['role'];
 
-        $sql = $db ->prepare("UPDATE phplogin SET users_id = :uusers_id, username = :uname, email = :uemail, phone_number = :uphone_number, line_id = :uline_id,  role = :urole where phplogin_id = :uphplogin_id");
+        $sql = $db ->prepare(" phplogin SET users_id = :uusers_id, username = :uname, email = :uemail, phone_number = :uphone_number, line_id = :uline_id,  role = :urole where phplogin_id = :uphplogin_id");
         $sql->bindParam(":uphplogin_id", $phplogin_id);
         $sql->bindParam(":uusers_id", $users_id);
         $sql->bindParam(":uname", $username);
@@ -23,10 +23,10 @@
         $sql->bindParam(":urole", $role);
         $sql->execute();
         if ($sql) {
-            $_SESSION['success'] = "Data has been updated successfully";
+            $_SESSION['success'] = "Data has been  successfully";
             header("location: admin_home.php");
         } else {
-            $_SESSION['error'] = "Data has not been updated successfully";
+            $_SESSION['error'] = "Data has not been  successfully";
             header("location: admin_home.php");
         }
     }
@@ -55,7 +55,7 @@
             <?php
                 if (isset($_GET['phplogin_id'])) {
                         $phplogin_id = $_GET['phplogin_id'];
-                        $stmt = $db->query("SELECT * FROM phplogin WHERE phplogin_id = $phplogin_id");
+                        $stmt = $db->query("SELECT * FROM phplogin,phpdata WHERE phplogin.phplogin_id = $phplogin_id and phplogin.phplogin_id = phpdata.phplogin_id;");
                         $stmt->execute();
                         $data = $stmt->fetch();
                 }
@@ -101,7 +101,7 @@
                     <input type="date">
                 <hr>
                 <a href="admin_home.php" class="btn btn-secondary">Go Back</a>
-                <button type="submit" name="" class="btn btn-primary">Update</button>
+                <button type="" name="" class="btn btn-primary">Adddate</button>
             </form>
     </div>
 

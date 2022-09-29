@@ -173,12 +173,12 @@
                     <div align="right" class="col-md-20 d-flex justify-content-end">
                         <div>&nbsp;</div>
                         <form action="s.adata.php" method="post">
-                            <input type="submit" value="ค้นหา" class="btn btn-info my-2">
+                            <input type="submit" value="ค้นหาวันที่" class="btn btn-info my-2">
                         </form>
                     </div>
-                            <div class="col-md-20 d-flex justify-content-end">
+                            <!--<div class="col-md-20 d-flex justify-content-end">
                                 <a class="btn btn-info" href="downloadpdf.php?file=gfgpdf">โหลดรายงาน</a>
-                            </div>
+                            </div>-->
 
                             <br>
             <table class="table">

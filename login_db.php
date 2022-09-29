@@ -34,22 +34,22 @@
                             switch($dbrole) {
                                 case 'admin':
                                     $_SESSION['admin_login'] = $email;
-                                    $_SESSION['success'] = "Admin... Successfully Login...";
+                                    $_SESSION['success'] = "ยินดีต้อนรับเข้าสู่ระบบฟิตเนสศูนย์กีฬามหาวิทยาลัยสงขลานครินทร์";
                                     header("location: admin/admin_home.php");
                                 break;
                                 case 'in_personnel':
                                     $_SESSION['in_personnel_login'] = $email;
-                                    $_SESSION['success'] = "in_personnel... Successfully Login...";
+                                    $_SESSION['success'] = "ยินดีต้อนรับเข้าสู่ระบบฟิตเนสศูนย์กีฬามหาวิทยาลัยสงขลานครินทร์";
                                     header("location: in_personnel/in_personnel_home.php");
                                 break;
                                 case 'out_personnel':
                                     $_SESSION['out_personnel_login'] = $email;
-                                    $_SESSION['success'] = "out_personnel... Successfully Login...";
+                                    $_SESSION['success'] = "ยินดีต้อนรับเข้าสู่ระบบฟิตเนสศูนย์กีฬามหาวิทยาลัยสงขลานครินทร์";
                                     header("location: out_personnel/out_personnel_home.php");
                                 break;
                                 case 'student':
                                     $_SESSION['student_login'] = $email;
-                                    $_SESSION['success'] = "student... Successfully Login...";
+                                    $_SESSION['success'] = "ยินดีต้อนรับเข้าสู่ระบบฟิตเนสศูนย์กีฬามหาวิทยาลัยสงขลานครินทร์";
                                     header("location: student/student_home.php");
                                 break;
                                 default:

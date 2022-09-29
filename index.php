@@ -64,12 +64,12 @@
         <form action="login_db.php" method="post" class="form-horizontal my-5" style="width: 50%;" >
         <label for="email" class="col-sm-3 control-label">Email</label>
         <div class="col-sm-12">
-            <input type="text" name="txt_email" class="form-control" required placeholder="Enter email">
+            <input type="text" name="txt_email" class="form-control" required placeholder="กรุณาใส่อีเมล์">
         </div>
         
         <label for="password" class="col-sm-3 control-label">Password</label>
         <div class="col-sm-12">
-            <input type="password" name="txt_password" class="form-control" required placeholder="Enter password">
+            <input type="password" name="txt_password" class="form-control" required placeholder="กรุณาใส่รหัสผ่าน">
         </div>
 
         <div class="form-group">
@@ -77,10 +77,10 @@
             <div class="col-sm-12">
                 <select name="txt_role" class="form-control">
                     <option value="" selected="selected">- ระดับสมาชิก -</option>
-                    <option value="admin">Admin</option>
-                    <option value="student">Student</option>
-                    <option value="in_personnel">In personnel</option>
-                    <option value="out_personnel">Out personnel</option>
+                    <option value="admin">ดูแลระบบ</option>
+                    <option value="student">นักศึกษา</option>
+                    <option value="in_personnel">บุคลากรภายใน</option>
+                    <option value="out_personnel">บุคคลภายนอก</option>
                 </select>
             </div>
         </div>

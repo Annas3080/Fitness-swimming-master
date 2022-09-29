@@ -87,11 +87,11 @@
                     <label for="type" class="col-sm-3 control-label">ระดับสมาชิก</label>
                     <div class="col-sm-12">
                     <select name="role" class="form-control">
-                        <option value="" selected="selected">- ระดับสมาชิก -</option>
-                        <option value="admin">Admin</option>
-                        <option value="student">Student</option>
-                        <option value="in_personnel">In personnel</option>
-                        <option value="out_personnel">Out personnel</option>
+                            <option value="" selected="selected">- ระดับสมาชิก -</option>
+                            <option value="admin">ดูแลระบบ</option>
+                            <option value="student">นักศึกษา</option>
+                            <option value="in_personnel">บุคลากรภายใน</option>
+                            <option value="out_personnel">บุคคลภายนอก</option>
                         </select>
                     </div>
                     </div>
