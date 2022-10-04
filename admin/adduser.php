@@ -51,7 +51,7 @@
     <div class="container mt-5">
         <h1>Edit Data</h1>
         <hr>
-        <form action="edit.php" method="post" enctype="multipart/form-data">
+        <form action="upadduser.php" method="post" enctype="multipart/form-data">
             <?php
                 if (isset($_GET['phplogin_id'])) {
                         $phplogin_id = $_GET['phplogin_id'];
@@ -62,46 +62,35 @@
             ?>
                 <div class="mb-3">
                     <label for="phplogin_id" class="col-sm-3 control-label">ID:</label>
-                    <input type="text" readonly value="<?php echo $data['phplogin_id']; ?>" required class="form-control" name="id" >
+                    <input type="text" readonly value="<?php echo $data['phplogin_id']; ?>" required class="form-control" name="id">
                     <div class="mb-3">
                     <label for="users_id" class="col-sm-3 control-label">รหัสผู้ใช้</label>
-                    <input type="text" value="<?php echo $data['users_id']; ?>" required class="form-control" name="users_id">
+                    <input type="text" value="<?php echo $data['users_id']; ?>" required class="form-control" name="users_id"disabled>
                 </div>
                     <label for="username" class="col-sm-3 control-label">ชื่อ-นามสกุล</label>
-                    <input type="text" value="<?php echo $data['username']; ?>" required class="form-control" name="username" >
+                    <input type="text" value="<?php echo $data['username']; ?>" required class="form-control" name="username" disabled>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="col-sm-3 control-label">อีเมล์:</label>
-                    <input type="text" value="<?php echo $data['email']; ?>" required class="form-control" name="email">
+                    <input type="text" value="<?php echo $data['email']; ?>" required class="form-control" name="email"disabled>
                 </div>
                 <div class="mb-3">
                     <label for="phone_number" class="col-sm-3 control-label">เบอร์โทรศัพท์:</label>
-                    <input type="text" value="<?php echo $data['phone_number']; ?>" required class="form-control" name="phone_number">
+                    <input type="text" value="<?php echo $data['phone_number']; ?>" required class="form-control" name="phone_number"disabled>
                 </div>
                 <div class="mb-3">
                     <label for="line_id" class="col-sm-3 control-label">ไลน์ไอดี:</label>
-                    <input type="text" value="<?php echo $data['line_id']; ?>" required class="form-control" name="line_id">
+                    <input type="text" value="<?php echo $data['line_id']; ?>" required class="form-control" name="line_id"disabled>
                 </div>
-
-                <div class="mb-3">
-                    <label for="type" class="col-sm-3 control-label">ระดับสมาชิก</label>
-                    <div class="col-sm-12">
-                    <select name="role" class="form-control">
-                        <option value="" selected="selected">- ระดับสมาชิก -</option>
-                        <option value="student">Student</option>
-                        <option value="in_personnel">In personnel</option>
-                        <option value="out_personnel">Out personnel</option>
-                        </select>
-                    </div>
-                    </div>
                 <div class="mb-3">
                     <label for="price" class="col-sm-3 control-label">ราคา:</label>
                     <input type="text" value="<?php echo $data['price']; ?>" required class="form-control" name="price">
                 </div>
-                    <input type="date">
+                    <input type="date" name="date">
                 <hr>
                 <a href="admin_home.php" class="btn btn-secondary">Go Back</a>
-                <button type="" name="" class="btn btn-primary">Adddate</button>
+                <button type="submit" name="asdate" class="btn btn-primary">Add User</button>
+                <br>
             </form>
     </div>
 

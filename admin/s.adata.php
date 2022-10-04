@@ -51,6 +51,9 @@
             <h3>
                 ผู้ดูแลระบบ
             </h3>
+            <h4>
+                ยินดีต้อนรับเข้าสู่ระบบฟิตเนสศูนย์กีฬามหาวิทยาลัยสงขลานครินทร์
+            </h4>
             <div class="col-md-20 d-flex justify-content-end">
                 <div>&nbsp;</div>
                     <a href="../logout.php" class="btn btn-danger">ออกจากระบบ</a>

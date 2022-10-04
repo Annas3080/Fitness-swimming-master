@@ -51,6 +51,9 @@
             <h3>
                 ผู้ดูแลระบบ
             </h3>
+            <h4>
+                ยินดีต้อนรับเข้าสู่ระบบฟิตเนสศูนย์กีฬามหาวิทยาลัยสงขลานครินทร์
+            </h4>
             <div class="col-md-20 d-flex justify-content-end">
                 <div>&nbsp;</div>
                     <a href="../logout.php" class="btn btn-danger">ออกจากระบบ</a>
@@ -175,7 +178,7 @@
                 <?php 
                     require_once "../connection.php";
                     $name = $_POST["empname"];
-                    $stmt = $db->query("SELECT * FROM phplogin WHERE username LIKE '%$name%'");
+                    $stmt = $db->query("SELECT * FROM phplogin WHERE username LIKE '%$name%' or phplogin_id LIKE '%$name%' or email LIKE '%$name%'");
                     $stmt->execute();
                     $phplogins = $stmt->fetchAll();
                     if (!$phplogins) {
