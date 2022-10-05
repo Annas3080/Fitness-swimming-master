@@ -4,7 +4,7 @@
         $email = $_POST['email'];
         $fullname = $_POST['fullname'];
 
-        $sToken = "qUsDQvi4h7SrTPkh5AVcfXUw6QIFgTPSHEWPxibVSyN";
+        $sToken = "NA2HozDoza8Tn5N91QaGAZD5ZmOGbQRrFl4Rfy2Lw26";
         $sMessage = "PSU sport complex : \n";
         $sMessage .= "" .$email ."\n";
         $sMessage .= "เรียนคุณ : " .$fullname ."\n";

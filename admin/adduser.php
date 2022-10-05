@@ -55,17 +55,15 @@
             <?php
                 if (isset($_GET['phplogin_id'])) {
                         $phplogin_id = $_GET['phplogin_id'];
-                        $stmt = $db->query("SELECT * FROM phplogin,phpdata WHERE phplogin.phplogin_id = $phplogin_id and phplogin.phplogin_id = phpdata.phplogin_id;");
+                        $stmt = $db->query("SELECT * FROM phplogin,phpdata as pd WHERE phplogin.phplogin_id = $phplogin_id;");
                         $stmt->execute();
                         $data = $stmt->fetch();
                 }
             ?>
                 <div class="mb-3">
                     <label for="phplogin_id" class="col-sm-3 control-label">ID:</label>
-                    <input type="text" readonly value="<?php echo $data['phplogin_id']; ?>" required class="form-control" name="id">
+                    <input type="text" readonly value="<?php echo $data[0]; ?>" required class="form-control" name="id">
                     <div class="mb-3">
-                    <label for="users_id" class="col-sm-3 control-label">รหัสผู้ใช้</label>
-                    <input type="text" value="<?php echo $data['users_id']; ?>" required class="form-control" name="users_id"disabled>
                 </div>
                     <label for="username" class="col-sm-3 control-label">ชื่อ-นามสกุล</label>
                     <input type="text" value="<?php echo $data['username']; ?>" required class="form-control" name="username" disabled>

@@ -237,7 +237,6 @@
                     <table class="table table-striped  table-hover table-bordered">
                         <thead class="table table-striped  table-hover table-bordered">
                         <tr>
-                            <th scope="col">รหัสผู้ใช้</th>
                             <th scope="col">ชื่อ-นามสกุล</th>
                             <th scope="col">อีเมล์</th>
                             <th scope="col">เบอร์โทรศัพท์</th>
@@ -259,7 +258,6 @@
                             $total += $row['price'];
                             ?>
                             <tr>
-                              <td class="text-center"><?=(($row['users_id']));?></td>
                               <td class="text-center"><?=(($row['username']));?></td>
                               <td class="text-center"><?=(($row['email']));?></td>
                               <td class="text-center"><?=(($row['phone_number']));?></td>
@@ -270,7 +268,6 @@
                             </tr>
                             <?php } ?>
                             <tr>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -342,7 +339,6 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">รหัสผู้ใช้</th>
                     <th scope="col">ชื่อ-นามสกุล</th>
                     <th scope="col">อีเมล์</th>
                     <th scope="col">เบอร์โทรศัพท์</th>
@@ -361,7 +357,6 @@
                     foreach($phplogins as $phplogin)  {  
                 ?>
                     <tr>
-                        <td><?php echo $phplogin['users_id']; ?></td>
                         <td><?php echo $phplogin['username']; ?></td>
                         <td><?php echo $phplogin['email']; ?></td>
                         <td><?php echo $phplogin['phone_number']; ?></td>
@@ -400,7 +395,6 @@
             <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">รหัสผู้ใช้</th>
                     <th scope="col">ชื่อ-นามสกุล</th>
                     <th scope="col">อีเมล์</th>
                     <th scope="col">เบอร์โทรศัพท์</th>
@@ -421,7 +415,6 @@
                     foreach($phplogins as $phplogin)  {  
                 ?>
                     <tr>
-                        <td><?php echo $phplogin['users_id']; ?></td>
                         <td><?php echo $phplogin['username']; ?></td>
                         <td><?php echo $phplogin['email']; ?></td>
                         <td><?php echo $phplogin['phone_number']; ?></td>
